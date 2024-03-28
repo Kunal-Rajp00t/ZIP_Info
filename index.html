@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZIP-INFO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            margin: auto;
+            margin-top: 5%;
+            max-width: 50%;
+            height: 70vh;
+            /* background-color: #f8f3ee; */
+            background-color: #f0e4d8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 3rem;
+        }
+
+        .search0 {
+            max-width: 300px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            width: 100vw;
+        }
+
+        .search {
+            max-width: 300px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 8px 15px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 15px;
+            font-size: 16px;
+            margin-left: 1rem;
+            border-radius: .8rem;
+            border: .1px solid grey;
+        }
+
+        button:hover {
+            cursor: pointer;
+            border: 2px solid black;
+            font-weight: bold;
+            text-shadow: 3px 4px 4px rgb(184, 184, 184);
+        }
+
+        .infobox {
+            border: 2px solid red;
+            width: 70%;
+            height: 60%;
+            margin: 20px auto;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .infobox {
+                width: 90%;
+                height: auto;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            display: none;
+            margin-top: 2rem;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ddd5ca;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .search {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            button {
+                margin: 1rem auto 0;
+            }
+        }
+
+        .zipDisplay {
+            font-size: 20px;
+            margin-bottom: 2rem;
+            height: 40%;
+            width: 50%;
+            background-image: url("Errmsg.jpg");
+            /* mix-blend-mode: multiply; */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .msg {
+            font-size: 20px;
+            color: #777777;
+            text-shadow: 2px 2px 4px rgb(153, 152, 152);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="search0">
+            <input type="text" id="countrycode" placeholder="Enter Country Code (Default-India)">
+        </div>
+        <div class="search">
+            <input type="text" id="pincode" placeholder="Enter ZIP code">
+            <button id="btn">Search</button>
+        </div>
+        <div class="msg">
+
+        </div>
+
+        <div class="infoBox">
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Place Name</th>
+                        <td id="placeName"></td>
+                    </tr>
+                    <tr>
+                        <th>Longitude</th>
+                        <td id="longi"> </td>
+                    </tr>
+                    <tr>
+                        <th>Latitude</th>
+                        <td id="lati"> </td>
+                    </tr>
+                    <tr>
+                        <th>State</th>
+                        <td id="state"> </td>
+                    </tr>
+                    <tr>
+                        <th>State Abbreviation</th>
+                        <td id="abv"> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
